@@ -17,9 +17,9 @@ The project mainly to develop a class method named plan_path() to execute the ac
 
 ## Implementation
 The motion planning is built mainly relied on the algorithm of A* Search.  However, I also provided an alternatively method, that is Voronoi Diagram.  The motion path built by A* Search usually get the shorter path.  However, the motion path got from Voronoi diagram is usually safer because the path is always at the middle of the obstacles.  The following is the diagrams for the motion path that planned under the algorithm of A* Search and Voronoi Diagram respectively.
-![A* Search](./images/A Star Motion Path Graph.png)
+![A* Search](./images/A_Star_Motion_Path_Graph.png)
 
-![Voronoi Diagram](https://lh3.googleusercontent.com/O54EMbZvhGHGAY5As4gR1CMBEtevEJMlQiM0tazjdLKOZvFNu_1UZjydYCDuNgOdX14KivK8BrWuoSO3hN5AA0ZbKV8QNpcRTd-MNgEZmO2EsvowJxcIawrqjAremLs71fOmL49B4Y4D99QeVwKda0EvyU4kt1jL9sSZT_W51GWdSfTJ4fpwqix0puM34hXioW6mOpc_3NweuKTYlwqmqplLguNUIuewi4sCf5S1QXENKViWnE8DHGESdpvuegfnzbIxXvSkHLapHTrO3vt2JFmXoQkGcJBMZy7z9L1-Nu6vXdtAaq6ZC2wWDift7kNRsVRVhr5_W7CKHmzB-duwD5XT4Eu3xpQxRmpwz5j82el_LGyAvqQjV-Zh8p-ZyFVs_RatgXlq40TX9iLbSQkmVJrGEuhm1SnD0cMMnZtqQsybQ1W_nFeqo7nLdh8zf7ux5LHOFt1tQakhxOn-HdfiJzy-9DRmRL3ZUFMy4GyJyGoLaoZJ9Akme-EfwXLh_fEpTyFKDFGSKUGYgeLTvIpm4bO0RqtCauocIqZ9Imy8TJQb9tfzXASwdfxFuFax9_aumpO8daFCaJ-rU9YWjn9Oz5RRPpTLOE8wJWI5DtxweD9ihbLIP4JryMRQZDwaenXX6PMrZEr3CeRMxNEdhNDh6wznMxSD-Sfyha07nfShQhKYeep3RAFeIXz2UYopLLz5HjOqMBqCyZCohMok3lFNVzq-=s864-no?authuser=0)
+![Voronoi Diagram](./images/Voronoi_Motion_Path.png)
 
 
 
@@ -31,7 +31,7 @@ The motion planning is built mainly relied on the algorithm of A* Search.  Howev
 
 #### The starter code contains two files :`motion_planning.py` and planning_utils.py
 The script of motion_planning.py contains a basic planning implementation that includes the setup of states for drone and callback routines for the operation handshaking between the drone and the computer.
-![Operation Handshaking](https://lh3.googleusercontent.com/Wd0iZqlxMshO2IvRMbQUxkbgmJLckhTdLCOwSjwOoXkyA5ImGiZCVN2ZpsfR2uMoNiGRMzRHMk1ShS2QwcZr4l5QE4dcSOLsWsiwJAOpRAPmW8-KhMOJ0Q7djeb4FQlbw6PyZcatDAQkvcuL2EyTfxklQl8ORo68gdHiUcKmr682QDmmSejpfbW-H-dFDx6FPIEodf88J-IFLuUd7dBjd2kb3GLDfnS6DR7qy8_7qVDGIhQFN53XMGh64-WMhImFO7IhgVjClmVXUgd9i33pjkgACcCGbyaycn6su8fZsxYdAHG9c1gaBdJMZHWFsZgj3e9JKxNRlrTAbO5ItY3kQoC6-gdnJBRZFeJt7ctiHd_J2LGFXyOFSxsYdWIGMmeD8tnIqzoWN20yZqaLNR76-q4p-RghgJEkKTaMBPm6IgcdJNHOlI521kXg6ZAbRYFTirnyzRAPoyRr_JVJ3KddQpLBbF9Tj2WKgKAc178ygrXNT1cok9IlvdOJQsb1aDC3cB_s0d2AZrp0cc4mauOV3D8MEA8SC5xm3U1iYMUMWnzfxb9YlThHQb3h2hvTNHK4Dz_5WEgZBEhDhtAiCYnd6n1YWUzz6i3iMjvkmKzhbYWLxNwAR3-yFhcWgrhIXy6zzvGMbKiF4K_FoU7uBWdDM1F4Ty20kxJ1P5CKWLrNRHfBnld-wOjvbWj7qye-TM1p4HFtiASdQu3Z6ZWjUFyb4ZgO=w960-h720-no?authuser=0)
+![Operation Handshaking](./images/handshaking.png)
 
 
 The script of planning_utils.py provides the utilities of grid creation, A Star Research and also some prune utilities like collinearity.
@@ -106,9 +106,9 @@ To prune the path of unnecessary waypoints, here we use the ray tracing method -
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i += 1      
 </font>
 
-![A* Search Pruned Motion Path](https://lh3.googleusercontent.com/QD78TmY0rmL_Syck3lowSxk8sLIShFtUUrdhlEYgrLFijH3zZvv82h45xOZApMbM_elhJcri1AvTdMRmCzM8BTD8A8F3gyTe2ryx4EfUPhve_n4C-L7PIAtRL2PtoG50q_iUO9ia9wNA_li1PeR4cEujyqTKZabUV7K5LO9ahZkoSzfH1TdPFR58U4XGWyLiUutldzld8C9fMVW_MKEvgjYldw_5JYCfGJ7f9SzF8tuYXC55mVnS-gaBQvLWLZkpf1HEbJ3uBbZu7AtMvou7nwBtaCcRVDQknL6ajwR_T2Q0PQF45XR0zB6vCLYJOZ-NuYzyWCl23xER6LOKJk55clB0aN_eYhRYUlYTvRU5M-T8Samr9wQ_RV5e_t4P8jVco63uaUWEHLqI9UShA-BSXyIetM1X6N_TbuOX1Ys5aeENWTFL6HgPtma4VAegChVyDAGqIW-iAaF5jkLJPhA2r9IiXXQ_hNiOoEREVu_UuV-7lMGQffG3fmAK-JJZPDBZhvXfdNXjAI-UzePSvZqNNo0jMyZR59OCMtT6-adtsPM_xct4oXsk77zO29z0sivrq0Lca9gjoz8Zc8HFBIMInDRgQ_yeNVDiWpg2pGEPF-MCmulYD_bzLclHEx2LftKXdLpXsbyy6ATHxF_nbs9aGSLjrab9J7iu6bAiUvzSHYkWVj8EJtuhG5gYkMNVqarBoUrL2gKVHqSLGCjVccQOB2YK=s864-no?authuser=0)
+![A* Search Pruned Motion Path](./images/A_Star_Pruned_Motion_Path_Graph.png)
 
-![Pruned Motion Plan from Voronoi Diagram](https://lh3.googleusercontent.com/Djr8kKsN5tduaHx_02lH7yvHlhBuMRXhcZy98G9fA_91DStMpkGsUrA5nDPxhf9CmSdP1g_VwBH3dSWT1yREsbaUQvSpj5Iyd90tQEo-B0cCNw75yDPBFjpRI_eSTXqRSZFUa_PNd-6X9G_1i8WIkx0gof-kzCePUuV1TovjcWomZTzneBTrnXDXldDSzPUcYGs_WpDFJULzATuoxBMUE1faxK2cgIz2CctvQQ0mdFq_61WElf9OgpzFbFql2_IC7iq3-1TyyiNLWA3sbP2aRMeOdFIrZ1P1uwUYvCFxT6cBXAeZDu9oZgHBCMN610u8ttQFfT8lkhjrDos1mdBJYzmurb3KfYoYDA6QL3gQMWBhympPeh002T5UsOUMvOTECG-k7iChfMS0vejQnohNFV8joWKj8_Yj6VtJo2DketIpOwxHTHDbAR72Ipj4a_t8ee9ebOG65-4zjZ0ahmqSHMHoSKVWNfEoCp6WD8ldetjO0FsYgOsmzXtVRVpSkJsrx16I_bYI2lIdwz9BnDeC8MFAPhr3XR4nYbnXMRmrrtpT5_WemWo1vu8_1aA292fcyL4xPmRgoyIn5gizILISPfKIP1BmFcqlhgLJytsRzmSQuxFWgpfJUfW0_cVP9ZSDOtwQMm0uiN-VLVyop7S-_Ik8QDxShbAB5JUj5g7dZ5sX5f5wKIEFvE-ZC4WqwY26MVuluUsEPWCGJUfoKGw0Ha_5=w715-h722-no?authuser=0)
+![Pruned Motion Plan from Voronoi Diagram](./images/Voronoi_Pruned_Motion_Path.png)
 ### Execute the flight
 The following is the video of the Drone flying through the planned motion path with Voronoi  Diagram
 [![Motion Planning](http://img.youtube.com/vi/gVI1KYsm3mc/0.jpg)](https://youtu.be/gVI1KYsm3mc)
